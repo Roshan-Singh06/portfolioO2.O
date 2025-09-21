@@ -1,0 +1,212 @@
+/* ================= Base Styles ================= */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rajdhani:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: #f4f6f8; /* Professional light gray background */
+  color: #1F2937; /* Dark slate text */
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ================= Header ================= */
+.header {
+      background: url('images/banner.jpeg');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.main-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff, 0 0 15px #93c5fd;
+  animation: glow 2.5s infinite alternate;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #e0e7ff;
+  margin: 15px 0 30px;
+}
+
+/* ===== Profile Image ===== */
+.profile-container {
+  margin: 0 auto 20px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #93c5fd;
+  box-shadow: 0 0 15px #3b82f6, 0 0 30px #93c5fd;
+  animation: floating 3s ease-in-out infinite;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Glowing Button ===== */
+.btn-glow {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  margin-top: 15px;
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #3b82f6, 0 0 15px #93c5fd;
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  background: #3b82f6;
+  color: #fff;
+  box-shadow: 0 0 20px #3b82f6, 0 0 35px #93c5fd;
+}
+
+/* ================= Sections ================= */
+.section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: #1E3A8A;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 5px solid #3B82F6;
+  padding-left: 15px;
+}
+
+/* Cards */
+.card {
+  background: #fefefe;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Grid Cards for Skills & Certifications */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skill-card, .cert-card {
+  background: #eef2ff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #1E3A8A;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover, .cert-card:hover {
+  transform: rotateY(8deg) translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* ================= Footer ================= */
+.footer {
+  text-align: center;
+  padding: 25px;
+  background: #1E3A8A;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.footer a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+/* ================= Animations ================= */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #93c5fd; }
+  50% { text-shadow: 0 0 15px #3b82f6; }
+  100% { text-shadow: 0 0 10px #93c5fd; }
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+  .main-title { font-size: 2.5rem; }
+  .profile-container { width: 140px; height: 140px; }
+}
+/* ===== LinkedIn Button ===== */
+.btn-glow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.8rem 1.5rem;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #0A66C2, #004182);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 102, 194, 0.5);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-glow i {
+  font-size: 1.2rem;
+}
+
+.btn-glow:hover {
+  background: linear-gradient(135deg, #004182, #0A66C2);
+  box-shadow: 0 6px 25px rgba(0, 102, 194, 0.6);
+  transform: translateY(-3px);
+}
+
